@@ -511,6 +511,7 @@ All skills in this workspace follow a consistent structure for discoverability a
 ```
 .github/skills/<skill-name>/
 ├── SKILL.md              # Required: Skill definition + workflow
+├── EXAMPLES.md           # Optional: lightweight example prompts and outputs
 ├── references/           # Documentation loaded as referenced
 │   └── *.md
 ├── scripts/              # Executable code (if applicable)
@@ -541,6 +542,8 @@ disable-model-invocation: false # Can agent auto-load it?
 4. **Common Scenarios** (optional) – Fallback patterns
 5. **Output** – What the user gets
 6. **References** – Links to supporting docs
+
+Keep `SKILL.md` focused on discovery and invocation. Move long checklists, detailed workflows, and stack-specific guidance into `references/` or `EXAMPLES.md` unless they are essential to trigger the skill correctly.
 
 ### Example: Bare Minimum Skill
 
@@ -609,7 +612,7 @@ If multiple skills use the same pattern (e.g., "Validate & Summarize"), document
 
 ### Workspace Metadata
 
-**Track in a central index** (consider adding):
+Track skills in a central index:
 
 ```yaml
 # skills-index.yaml
@@ -646,6 +649,7 @@ Every skill must meet these standards before shipping.
 - [ ] Fallback patterns documented for common confusion points
 - [ ] Jargon defined or avoided
 - [ ] Examples provided for abstract concepts
+- [ ] SKILL.md does not restate default agent behavior or duplicate workspace-wide rules unnecessarily
 
 ### Conversational Quality
 
@@ -732,11 +736,11 @@ Every skill must meet these standards before shipping.
 
 Quick reference to skills currently in development/available in this workspace.
 
-### AgentCodeDeslop
+### agent-code-deslop
 
-**Purpose**: Agent customization guidance  
-**Skills developed with**: [Define as you build]  
-**Related files**: `AgentCodeDeslop/SKILL.md`, `AgentCodeDeslop/EXAMPLES.md`
+**Purpose**: Clean up AI-generated code while preserving behavior  
+**Skills developed with**: Refactoring, simplification, idiomatic cleanup  
+**Related files**: `agent-code-deslop/SKILL.md`, `agent-code-deslop/EXAMPLES.md`
 
 ### code-change-review
 
@@ -749,6 +753,30 @@ Quick reference to skills currently in development/available in this workspace.
 **Purpose**: Turn ideas into project specs  
 **Skills developed with**: Discovery, research, co-authoring, design systems  
 **Related files**: `idea-to-project/SKILL.md`
+
+### root-cause-debugging
+
+**Purpose**: Find verified causes of bugs and regressions before fixing  
+**Skills developed with**: Reproduction, tracing, hypothesis testing, validation  
+**Related files**: `root-cause-debugging/SKILL.md`, `root-cause-debugging/EXAMPLES.md`
+
+### security-and-hardening
+
+**Purpose**: Review and harden code against practical security risks  
+**Skills developed with**: Threat modeling, attack-surface review, risk prioritization  
+**Related files**: `security-and-hardening/SKILL.md`, `security-and-hardening/EXAMPLES.md`
+
+### feature-implementation-planner
+
+**Purpose**: Turn feature requests into codebase-specific implementation plans  
+**Skills developed with**: Impact analysis, sequencing, rollout planning  
+**Related files**: `feature-implementation-planner/SKILL.md`, `feature-implementation-planner/EXAMPLES.md`
+
+### test-strategy-and-generation
+
+**Purpose**: Choose and generate the right tests for a change  
+**Skills developed with**: Coverage strategy, regression design, framework-aware generation  
+**Related files**: `test-strategy-and-generation/SKILL.md`, `test-strategy-and-generation/EXAMPLES.md`
 
 ---
 
@@ -781,6 +809,19 @@ Quick reference to skills currently in development/available in this workspace.
 - Dependency analysis patterns
 - Documentation standards for AI agents
 - Conversation management & refresh strategy
+
+**March 23, 2026 — Core Skill Expansion (v1.2)**
+- Renamed `AgentCodeDeslop/` references to `agent-code-deslop/`
+- Added `root-cause-debugging` for evidence-driven debugging workflows
+- Added `security-and-hardening` for practical security review and mitigation
+- Added `feature-implementation-planner` for codebase-aware feature planning
+- Added `test-strategy-and-generation` for focused, stack-aware test design
+
+**March 23, 2026 — Examples and Index Pass (v1.3)**
+- Added EXAMPLES.md files for the four new skills
+- Added `skills-index.yaml` to track skill purpose, overlaps, and related files
+- Corrected stale relative links in `idea-to-project/SKILL.md`
+- Tightened workspace skill descriptions and related file references
 
 **Future Updates**:
 - [ ] Add testing patterns (how to validate skill effectiveness)
