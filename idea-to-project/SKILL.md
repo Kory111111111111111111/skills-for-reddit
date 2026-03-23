@@ -1,6 +1,6 @@
 ---
 name: idea-to-project
-description: 'Turn small ideas into fully-fledged projects through structured discovery, research, and specification. Use when: starting a new project from a rough idea, need to validate feasibility, want to create comprehensive project documentation, exploring feature requirements and design patterns.'
+description: 'Turn small ideas into fully-fledged projects through structured discovery, research, and specification. Use when: starting a new project from a rough idea, need to validate feasibility, want to create comprehensive project documentation, exploring feature requirements and design patterns. Conversational, adaptive workflow.'
 argument-hint: 'Describe your project idea or problem you want to solve'
 user-invocable: true
 disable-model-invocation: false
@@ -8,7 +8,7 @@ disable-model-invocation: false
 
 # Idea to Project
 
-Transform a rough concept into a complete project specification through four iterative phases: discovery, research, feature definition, and design systems.
+Transform a rough concept into a complete project specification through four conversational, adaptive phases: discovery, research, feature definition, and design systems.
 
 ## When to Use
 
@@ -18,126 +18,131 @@ Transform a rough concept into a complete project specification through four ite
 - **Risk reduction**: Understanding features and design before development
 - **Scope clarification**: Converting informal requirements into executable specs
 
+## Approach
+
+This skill uses **progressive questioning**, **adaptive branching**, and **natural dialogue** to guide you through each phase. See [RULES.md](./RULES.md) for conversational guidelines and decision trees.
+
 ## Procedure
 
 ### Phase 1: Conversational Discovery
 
-**Goal**: Extract the user's core idea, problem statement, and goals
+**Goal**: Understand the user's core idea, problem, and vision through natural dialogue.
 
-**Steps**:
+**Agent Behavior** (see [RULES.md](./RULES.md#phase-1-discovery-rules) for conversational patterns):
 
-1. Ask the user to describe their idea in their own words
-2. Clarify the **problem being solved**. Ask: "What's the main pain point?"
-3. Identify **primary users**. Ask: "Who will use this?"
-4. Establish **success criteria**. Ask: "How will you know this project succeeded?"
-5. Uncover **constraints**. Ask about timeline, budget, team size, tech preferences
-6. Ask for **three key features** they imagine
-7. Document findings; confirm your understanding before proceeding
+1. **Opening**: Greet warmly and ask the user to describe their idea naturally—no pressure for polish or completeness.
+   - *Example*: "Tell me about your idea—what's the spark here? What problem are you trying to solve?"
 
-**Decision Gate**: Do you have enough clarity to search for existing solutions? If no, loop back to Phase 1.
+2. **Probe deeper on problem & pain point**: Listen for the real problem, not the solution.
+   - If vague: "You mentioned organization. What specifically is hard about [domain]?"
+   - Look for emotion or frustration—that's the real problem.
+
+3. **Map the users**: Understand who this is for.
+   - "Who feels this pain? Are they professionals, consumers, a specific niche?"
+
+4. **Uncover motivation & constraints** (adaptively, based on what they reveal):
+   - Timeline: "When do you want this live?"
+   - Team: "Are you building solo or with a team?"
+   - Tech comfort: "Any tech you prefer or want to learn?"
+   - Success: "What does winning look like in 6 months?"
+
+5. **Extract features organically**: Don't ask "list 3 features." Instead:
+   - "What's the first thing someone would do when they open this?"
+   - "What would make it worth their time?"
+   - "Anything you'd want *removed* to keep it simple?"
+
+6. **Validate & summarize**: Reflect back what you heard to confirm.
+   - *Example*: "So you're building a habit tracker for teams, focused on streak-tracking and accountability. The goal is to launch in 3 months. Did I get that right?"
+
+**Decision Gate**: Does the agent have enough clarity to search for existing solutions?
+- ✅ **Move forward** if: Problem is clear, users are defined, 2–3 core features emerge, constraints are known.
+- ❌ **Loop back** if: Still vague, conflicting signals, or missing key context. Use follow-ups from [RULES.md](./RULES.md#fallback-conversational-patterns).
 
 ### Phase 2: Research & Validation
 
-**Goal**: Research existing implementations and best-practice patterns
+**Goal**: Ground the idea in reality by researching what exists and what's working.
 
-**Steps**:
+**Agent Behavior** (see [RULES.md](./RULES.md#phase-2-research-rules)):
 
-1. Search the web for **similar existing projects/products** in the problem domain
-2. Document 3–5 key competitors or references with brief summaries
-3. Extract **best practices** from what you found (patterns, features, strengths, gaps)
-4. Identify **feature patterns** across similar solutions (common, expected, differentiation)
-5. Compile findings into a research summary
-6. Present to user: "Here's what exists. Here's what's working. Where do you want to differentiate?"
+1. **Prepare**: Based on Discovery, identify key search terms (problem domain, user type, features).
+   - *Example*: For "habit tracker for teams," search: "team habit tracking apps," "accountability tools," "habit tracking SaaS"
 
-**Decision Gate**: Is the idea still worthwhile? Does it complement or improve upon existing solutions? Adjust scope if needed.
+2. **Search the web**: Find 3–7 existing projects, competitors, or reference implementations.
+   - Document: name, URL, key features, target users, pricing (if applicable)
+   - Note strengths, weaknesses, and gaps
+
+3. **Analyze patterns**: Extract common features and differentiators.
+   - *Example*: "Most habit trackers show daily streaks. Some add social elements. Few integrate with Slack."
+
+4. **Present findings conversationally**:
+   - "Here's what's out there... [summary]"
+   - "Here's what works really well: [patterns]"
+   - "Here's where most solutions fall short: [gaps]"
+   - "So... given all this, do you still see a unique angle? How do you want to be different?"
+
+5. **Adapt scope**: Let the user comment on findings. They may want to:
+   - ✅ Proceed with confidence (idea is fresh or better)
+   - 🔄 Pivot (learned something that changes direction)
+   - ⛔ Pause (realized someone is already doing it really well)
+
+**Decision Gate**: Is the idea still worthwhile?
+- ✅ **Move forward** if: Idea complements existing solutions, user sees differentiation, or no direct competitor exists.
+- 🔄 **Pivot** if: Competition is strong; help user find a niche or angle.
+- ⛔ **Pause** if: User wants to reconsider, but offer to refocus scope.
 
 ### Phase 3: Feature Definition & Project Spec
 
-**Goal**: Create a comprehensive `.md` project specification document
+**Goal**: Collaboratively build a comprehensive project specification document.
 
-**Generate** a markdown file (e.g., `PROJECT_SPEC.md` or `{ProjectName}_Spec.md`) with these sections:
+**Agent Behavior** (see [RULES.md](./RULES.md#phase-3-specification-rules)):
 
-1. **Project Overview**
-   - 1–2 sentence description
-   - Problem statement
-   - Target audience
-   - Success metrics
+1. **Frame the conversation**: "Let's create a master spec document. I'll start a template and we'll build it together."
 
-2. **Feature List**
-   - Core features (must-have)
-   - Secondary features (nice-to-have)
-   - Out-of-scope features
-   - Feature priorities and sequencing
+2. **Co-author PROJECT_SPEC.md** with these sections:
+   - **Project Overview**: 1–2 sentence hook, problem, audience, success metrics
+   - **Feature List**: Core (must-have), secondary (nice-to-have), out-of-scope
+   - **Requirements**: Functional, non-functional, compliance
+   - **Architecture**: System design, tech stack, data flow (if applicable)
+   - **UI/Theming Outline**: User flows, wireframe descriptions, visual tone
 
-3. **Requirements**
-   - Functional requirements
-   - Non-functional requirements (performance, scalability, security)
-   - Compliance or regulatory needs
+3. **Iterate conversationally**:
+   - "Here's what I drafted for features. What did I miss or misunderstand?"
+   - "Let's prioritize—which of these *must* be in v1?"
+   - "For architecture, are you thinking [Option A] or [Option B]? Any constraints?"
 
-4. **Architecture** (if applicable)
-   - High-level system design
-   - Technology stack recommendations
-   - Data flow / component interactions
-   - Deployment model
+4. **Validate**: "Does this feel complete? Anything you want to refine before we move to design?"
 
-5. **UI/Theming Outline** (foundation for Phase 4)
-   - Primary use cases and user flows
-   - Wireframe-level descriptions or ASCII sketches
-   - Tone and visual style (e.g., "modern & minimalist" vs. "playful & colorful")
+**Deliverable**: `PROJECT_SPEC.md` lives in the root or user-specified folder for team collaboration.
 
-**Decision Gate**: User reviews and approves the spec. Make revisions as needed before Phase 4.
+**Decision Gate**: User approves spec (or requests revisions).
+- ✅ **Move to Phase 4** if spec is solid and user is ready for design details.
+- 🔄 **Iterate** if user wants to refine features or requirements.
 
 ### Phase 4: Design System & UI/Theming
 
-**Goal**: Establish a comprehensive design system with components, accessibility, and responsiveness guidance
+**Goal**: Establish a comprehensive, accessible design system together.
 
-**Steps**:
+**Agent Behavior** (see [RULES.md](./RULES.md#phase-4-design-rules)):
 
-1. **Color Palette**
-   - Primary color(s) and rationale
-   - Secondary/accent colors
-   - Neutral palette (grays, whites, blacks)
-   - Semantic colors (success, warning, error, info)
-   - Accessibility checks (WCAG contrast ratios)
+1. **Start with tone & vision**: "Before we dive into colors and components, let's nail the feel. Is this [playful], [professional], [minimalist], or something else? Why?"
 
-2. **Typography**
-   - Font choices (heading font, body font, monospace)
-   - Type scale (sizes, weights, line-heights)
-   - Usage guidelines per component type
+2. **Build collaboratively**:
+   - **Color Palette**: "What colors resonate with your brand? Let's check WCAG contrast ratios to ensure accessibility."
+   - **Typography**: "What font pairing feels right? Serif for formal, sans-serif for modern, or something distinctive?"
+   - **Component Library**: "Let's define buttons, forms, cards, etc. Each with states (normal, hover, active, disabled) and accessibility notes."
+   - **Layout & Spacing**: "What grid system? 12-column? Flexible? How much white space?"
+   - **Accessibility**: "We're targeting WCAG 2.1 AA, right? That means [contrast, keyboard nav, screen reader support]."
+   - **Responsiveness**: "Mobile first? Desktop first? What are your key breakpoints?"
 
-3. **Component Library**
-   - Button styles and states (default, hover, active, disabled)
-   - Form inputs (text, checkbox, radio, select, etc.)
-   - Cards, modals, notifications, alerts
-   - Navigation components (header, sidebar, breadcrumbs, tabs)
-   - Data presentation (tables, lists, grids)
-   - Each: visual specs, interaction states, accessibility notes
+3. **Provide examples**: "Here's what this might look like in Tailwind / CSS / your framework of choice..."
 
-4. **Layout & Spacing**
-   - Grid system (12-col, 8-col, etc.)
-   - Spacing scale (margins, padding increments)
-   - Breakpoints (responsive design)
-   - Safe areas and margins
+4. **Iterate**: "Does this direction feel right, or should we adjust colors/spacing/component styles?"
 
-5. **Accessibility Guidelines**
-   - WCAG 2.1 AA compliance targets
-   - Keyboard navigation patterns
-   - Screen reader considerations
-   - Color contrast requirements
-   - Focus indicators
+**Deliverable**: `DESIGN_SYSTEM.md` (or appended to PROJECT_SPEC.md). Includes design tokens (CSS variables, Tailwind config snippets, etc.) for dev handoff.
 
-6. **Responsiveness**
-   - Mobile-first approach or desktop-first rationale
-   - Breakpoint definitions (mobile, tablet, desktop)
-   - Adaptation strategies per breakpoint
-   - Touch-friendly spacing and sizing rules
-
-7. **Design Tokens & Implementation**
-   - CSS custom properties (`--color-primary`, etc.)
-   - Reference code snippets (CSS, Tailwind, styled-components, etc.)
-   - Component examples or links to component library starter
-
-**Deliverable**: Update the project spec with a full "Design System" section, or create a separate `DESIGN_SYSTEM.md`.
+**Decision Gate**: User confirms design system is usable.
+- ✅ **Complete** if: Colors, components, and guidelines are defined; accessibility checks passed.
+- 🔄 **Refine** if: User wants to adjust colors, spacing, or component patterns.
 
 ## Example Usage Prompts
 
@@ -145,25 +150,29 @@ Transform a rough concept into a complete project specification through four ite
 - `/idea-to-project` → "Problem: Developers waste time context-switching between monitoring tools"
 - `/idea-to-project` → "An app to help friends organize and split shared expenses"
 
-## Output
+## Output & Deliverables
 
-Two or more markdown files:
+Two markdown files created in project root (or user-specified folder):
 
-- **PROJECT_SPEC.md** – Project overview, features, requirements, architecture, UI outline
-- **DESIGN_SYSTEM.md** (or appended section) – Colors, typography, components, layout, accessibility, responsiveness
+1. **PROJECT_SPEC.md** – Overview, problem, features, requirements, architecture, UI outline
+2. **DESIGN_SYSTEM.md** – Colors, typography, components, layout, accessibility, responsiveness, design tokens
 
-Both files live in the project root (or folder specified by user) for team collaboration and future reference.
+Both are ready for team collaboration and developer handoff.
 
-## Tips
+## Conversational Tips
 
-- **Phase 1 is critical**: Take time to clarify the problem. Vague specs cause rework later.
-- **Web research saves time**: Don't rebuild what exists. Find what's working and differentiate.
-- **Design systems scale**: Investing in component specs upfront prevents design debt.
-- **Share early**: Get user/stakeholder feedback after Phase 3 before diving into implementation.
-- **Document assumptions**: Note what you *don't* know and flag risks in the spec.
+See [RULES.md](./RULES.md) for detailed conversational patterns, decision trees, and fallback strategies.
+
+Quick reminders:
+- **Listen more than direct**: Let the user shape the idea; ask open-ended questions.
+- **Validate frequently**: Summarize after each phase. Confirm before moving forward.
+- **Adapt based on response**: If the user says "actually, scratch that," pivot without judgment.
+- **Stay curious**: Ask "why?" when you don't understand the rationale behind a feature or choice.
+- **Make it collaborative**: Use "let's" language, not "I'll."
 
 ## References
 
+- [RULES.md](./RULES.md) – Conversational guidelines and decision trees for this skill
 - [WCAG 2.1 Accessibility Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)
 - [Design Systems Best Practices](https://www.nngroup.com/articles/design-systems-101/)
 - [User Story Format](https://en.wikipedia.org/wiki/User_story)
