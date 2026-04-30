@@ -17,48 +17,13 @@ skills:
     depends_on: []
     overlaps:
       - agent-code-deslop
+      - impl-quality-audit
       - security-and-hardening
       - test-strategy-and-generation
     related_files:
       - code-change-review/SKILL.md
       - code-change-review/references/workflow.md
       - code-change-review/references/patterns.md
-
-  - name: idea-to-project
-    purpose: Turn rough ideas into project specifications and design direction.
-    category: planning
-    depends_on: []
-    overlaps:
-      - feature-implementation-planner
-    related_files:
-      - idea-to-project/SKILL.md
-      - idea-to-project/references/workflow.md
-
-  - name: root-cause-debugging
-    purpose: Find verified causes of bugs, flaky behavior, and regressions.
-    category: debugging
-    depends_on: []
-    overlaps:
-      - code-change-review
-      - test-strategy-and-generation
-      - security-and-hardening
-    related_files:
-      - root-cause-debugging/SKILL.md
-      - root-cause-debugging/EXAMPLES.md
-      - root-cause-debugging/references/workflow.md
-
-  - name: security-and-hardening
-    purpose: Review attack surface and harden code against practical risks.
-    category: security
-    depends_on: []
-    overlaps:
-      - code-change-review
-      - root-cause-debugging
-      - test-strategy-and-generation
-    related_files:
-      - security-and-hardening/SKILL.md
-      - security-and-hardening/EXAMPLES.md
-      - security-and-hardening/references/workflow.md
 
   - name: feature-implementation-planner
     purpose: Build a codebase-aware implementation plan before coding.
@@ -73,6 +38,69 @@ skills:
       - feature-implementation-planner/EXAMPLES.md
       - feature-implementation-planner/references/workflow.md
 
+  - name: frontend-design
+    purpose: Create distinctive, production-grade frontend interfaces with high design quality.
+    category: frontend
+    depends_on: []
+    overlaps:
+      - idea-to-project
+      - ui-expert
+    related_files:
+      - frontend-design/SKILL.md
+
+  - name: idea-to-project
+    purpose: Turn rough ideas into project specifications and design direction.
+    category: planning
+    depends_on: []
+    overlaps:
+      - feature-implementation-planner
+      - frontend-design
+      - ui-expert
+    related_files:
+      - idea-to-project/SKILL.md
+      - idea-to-project/references/workflow.md
+
+  - name: impl-quality-audit
+    purpose: Audit implementation quality and robustness against production-grade references.
+    category: audit
+    depends_on: []
+    overlaps:
+      - code-change-review
+      - root-cause-debugging
+      - security-and-hardening
+    related_files:
+      - impl-quality-audit/SKILL.md
+      - impl-quality-audit/EXAMPLES.md
+      - impl-quality-audit/references/workflow.md
+
+  - name: root-cause-debugging
+    purpose: Find verified causes of bugs, flaky behavior, and regressions.
+    category: debugging
+    depends_on: []
+    overlaps:
+      - code-change-review
+      - impl-quality-audit
+      - test-strategy-and-generation
+      - security-and-hardening
+    related_files:
+      - root-cause-debugging/SKILL.md
+      - root-cause-debugging/EXAMPLES.md
+      - root-cause-debugging/references/workflow.md
+
+  - name: security-and-hardening
+    purpose: Review attack surface and harden code against practical risks.
+    category: security
+    depends_on: []
+    overlaps:
+      - code-change-review
+      - impl-quality-audit
+      - root-cause-debugging
+      - test-strategy-and-generation
+    related_files:
+      - security-and-hardening/SKILL.md
+      - security-and-hardening/EXAMPLES.md
+      - security-and-hardening/references/workflow.md
+
   - name: test-strategy-and-generation
     purpose: Choose and generate the smallest effective set of tests for a change.
     category: testing
@@ -86,3 +114,16 @@ skills:
       - test-strategy-and-generation/SKILL.md
       - test-strategy-and-generation/EXAMPLES.md
       - test-strategy-and-generation/references/workflow.md
+
+  - name: ui-expert
+    purpose: Apply algorithmic UI design principles for consistent, ergonomic, and accessible interfaces.
+    category: ui
+    depends_on: []
+    overlaps:
+      - frontend-design
+      - idea-to-project
+    related_files:
+      - ui-expert/SKILL.md
+      - ui-expert/examples.md
+      - ui-expert/reference.md
+      - ui-expert/resources.md
