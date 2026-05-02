@@ -1,4 +1,12 @@
 skills:
+  - name: init-skills
+    purpose: Initialize and move dropped-in skills to their proper IDE directories (e.g. .cursor, .windsurf).
+    category: setup
+    depends_on: []
+    overlaps: []
+    related_files:
+      - init-skills/SKILL.md
+
   - name: agent-code-deslop
     purpose: Clean up AI-generated code while preserving behavior.
     category: code-quality
@@ -86,3 +94,39 @@ skills:
       - test-strategy-and-generation/SKILL.md
       - test-strategy-and-generation/EXAMPLES.md
       - test-strategy-and-generation/references/workflow.md
+
+  - name: ui-audit
+    purpose: Conduct a comprehensive audit of a JUCE user interface for premium aesthetics and UX.
+    category: review
+    depends_on: []
+    overlaps:
+      - code-change-review
+    related_files:
+      - ui-audit/SKILL.md
+
+  - name: build-error-fix
+    purpose: Investigate and resolve build, compilation, or linker errors.
+    category: debugging
+    depends_on: []
+    overlaps:
+      - root-cause-debugging
+    related_files:
+      - build-error-fix/SKILL.md
+
+  - name: wavfin-juce-workflow-pt1
+    purpose: Scaffold and build UI components for JUCE projects.
+    category: planning
+    depends_on: []
+    overlaps:
+      - feature-implementation-planner
+    related_files:
+      - wavfin-juce-workflow-pt1/SKILL.md
+
+  - name: wavfin-juce-workflow-pt2
+    purpose: Implement DSP and audio effects for JUCE projects.
+    category: planning
+    depends_on: [wavfin-juce-workflow-pt1]
+    overlaps:
+      - feature-implementation-planner
+    related_files:
+      - wavfin-juce-workflow-pt2/SKILL.md

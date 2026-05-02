@@ -54,6 +54,15 @@ Produce a concise debugging report with:
 
 See [EXAMPLES.md](EXAMPLES.md) for example prompts, expected investigation patterns, and output shapes.
 
+## JUCE 8.0.8 Specific Protocol (WAVFin)
+
+When debugging JUCE C++ audio plugin projects:
+1. **Efficiency Principle (Kory's Rule)**: If an issue isn't fixed after 2 tries, STOP incremental changes and rewrite the function from the ground up.
+2. **Comprehensive Audit**: Audit the entire file/logic flow, not just the symptom area.
+3. **Thread Safety**: Ensure NO memory allocations or locks on the audio thread.
+4. **Documentation Check**: Always reference JUCE documentation via `jucedoclinks.mdc`.
+5. **Output**: Save your detailed summary to `MIDITOOLS/Summaries/`.
+
 ## References
 
 - [RULES.md](../RULES.md) - Shared investigation and validation standards

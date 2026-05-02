@@ -53,6 +53,15 @@ Produce a feature implementation brief with:
 
 See [EXAMPLES.md](EXAMPLES.md) for model plans, output structure, and expected planning depth.
 
+## JUCE 8.0.8 Feature Planning Protocol (WAVFin)
+
+When planning features for JUCE C++ audio plugin projects:
+1. **Clarification is Mandatory**: Never assume user intent. Ask clarifying questions regarding UI/UX, integration, and audio behavior.
+2. **Consequence Assessment**: Identify trade-offs in CPU usage, real-time safety, and cross-platform compatibility.
+3. **LookAndFeel & Theming**: ALWAYS plan to use the `CustomLookAndFeel` class and `GMarketSans` font. No hardcoded colors.
+4. **Thread Safety Design**: Ensure the design enforces separation of UI updates (message thread) and audio processing (real-time safe).
+5. **Documentation**: Always verify patterns against `jucedoclinks.mdc`.
+
 ## References
 
 - [RULES.md](../RULES.md) - Shared context gathering, dependency analysis, and verification rules

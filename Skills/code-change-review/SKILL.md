@@ -82,6 +82,14 @@ For concrete examples of negative patterns to avoid and positive patterns to fol
 
 **For complex logic**: Use the logic checklist in [workflow.md](references/workflow.md) and trace execution paths carefully.
 
+## JUCE 8.0.8 Code Quality Protocol (WAVFin)
+
+When reviewing JUCE C++ audio plugin projects:
+1. **Memory & Threading**: Check for raw pointers and ensure NO allocations or locks exist on the audio thread.
+2. **Modern C++ & Performance**: Recommend modern C++ features where compatible, and note any performance-critical optimizations.
+3. **Robustness**: Highlight any exception safety issues or non-real-time safe code.
+4. **Documentation Check**: Base all recommendations on JUCE documentation via `jucedoclinks.mdc`.
+
 ## References
 
 - [workflow.md](references/workflow.md) - Full review checklists and detailed procedure
