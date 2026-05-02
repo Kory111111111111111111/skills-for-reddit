@@ -18,23 +18,23 @@ disable-model-invocation: false
 
 ## Philosophy
 
-The best changes are the ones that appear *invisible* — they fit seamlessly into the existing codebase without standing out. This skill helps ensure changes follow project patterns, don't introduce unnecessary complexity, and don't break subtle invariants.
+The best changes are the ones that appear *invisible* — they fit seamlessly into the existing codebase without standing out. This skill helps ensure changes follow project patterns, don't introduce unnecessary complexity, and don't break subtle invariants. The goal of this is to ensure robustness and maintainability, not just to catch obvious bugs. By systematically checking for common pitfalls and patterns, we can catch issues that might be missed in a quick glance. 
 
 ---
 
 ## Step-by-Step Procedure
 
-1. Understand the request and scan the diff.
-2. Review logic paths, side effects, and edge cases.
+1. Understand the request and scan the diff or whatever code the user wants reviewed. Identify the scope and nature of the change (local vs cross-cutting, logic vs UI). If the user does not specify, you are at that point to audit the primary source code files in the codebase, tracing them to what they power and continue your audit from there.
+2. Review logic paths, side effects, and edge cases thoroughly. Check assumptions and compare against project patterns. Evaluate whether the change would hold up in production use.
 3. Review UI consistency if presentation changed.
 4. Check integrations, configuration impact, and documentation needs.
 5. Report concrete findings with severity and suggested fixes.
 
-Use [workflow.md](references/workflow.md) for the full checklists and detailed review sequence.
+Use [workflow.md](references/workflow.md) for the full checklists and detailed review sequence. You do not deviate from 
 
 ## Output
 
-Produce a review report with:
+Produce a review report in the chat with: 
 
 1. Findings ranked by severity
 2. Why each issue matters
