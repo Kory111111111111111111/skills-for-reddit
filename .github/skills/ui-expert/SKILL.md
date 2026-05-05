@@ -1,6 +1,6 @@
 ---
 name: ui-expert
-description: Apply algorithmic UI design principles based on cognitive psychology, ergonomics, and mathematical design systems. Use when generating UI code, reviewing interfaces, making component decisions, or ensuring design system consistency. Covers cognitive load laws (Hick's, Miller's), Gestalt principles, Fitts's Law, 8-point grids, typography scales, and WCAG accessibility.
+description: Apply algorithmic UI design principles, build production-grade frontend interfaces, and conduct JUCE UI audits. Use when generating web UI code, designing or reviewing interfaces, building distinctive frontend components, auditing JUCE plugin UIs for premium aesthetics, or ensuring design system consistency. Covers cognitive load laws, Gestalt principles, Fitts's Law, 8-point grids, typography scales, WCAG accessibility, bold frontend aesthetics, and JUCE 8 LookAndFeel best practices.
 ---
 
 # UI Expert
@@ -151,3 +151,62 @@ Before finalizing UI code:
 - For detailed cognitive principles: [reference.md](reference.md)
 - For implementation examples: [examples.md](examples.md)
 - For source links and references: [resources.md](resources.md)
+
+---
+
+## Frontend Design
+
+When asked to build web components, pages, or applications, commit to a bold aesthetic direction and implement real working code with exceptional attention to detail.
+
+### Design Thinking
+
+Before coding, understand the context and commit to a clear aesthetic direction:
+- **Purpose**: What problem does this interface solve? Who uses it?
+- **Tone**: Pick an intentional aesthetic extreme: brutally minimal, maximalist, retro-futuristic, organic, luxury/refined, playful, editorial, brutalist, art deco, soft/pastel, industrial, etc.
+- **Constraints**: Technical requirements (framework, performance, accessibility).
+- **Differentiation**: What makes this UNFORGETTABLE? What's the one thing someone will remember?
+
+**CRITICAL**: Choose a clear conceptual direction and execute it with precision. Bold maximalism and refined minimalism both work — the key is intentionality, not intensity.
+
+### Frontend Aesthetics Guidelines
+
+- **Typography**: Choose fonts that are beautiful, unique, and characterful. Avoid generic fonts like Arial and Inter. Pair a distinctive display font with a refined body font.
+- **Color & Theme**: Commit to a cohesive aesthetic using CSS variables. Dominant colors with sharp accents outperform timid, evenly-distributed palettes.
+- **Motion**: Use animations for effects and micro-interactions. Prefer CSS-only for HTML. Use Motion library for React when available. One well-orchestrated page load with staggered reveals creates more delight than scattered micro-interactions.
+- **Spatial Composition**: Unexpected layouts. Asymmetry. Overlap. Diagonal flow. Grid-breaking elements. Generous negative space OR controlled density.
+- **Backgrounds & Visual Details**: Create atmosphere and depth. Add contextual effects — gradient meshes, noise textures, geometric patterns, layered transparencies, dramatic shadows, decorative borders, custom cursors, grain overlays.
+
+**NEVER** use generic AI aesthetics: Inter/Roboto/Arial/system fonts, purple gradients on white, predictable layouts, or cookie-cutter patterns without context-specific character. Vary between light and dark themes across generations; never converge on common choices like Space Grotesk.
+
+### Implementation Standard
+
+Match complexity to the aesthetic vision. Maximalist designs need elaborate code with extensive animations. Minimalist designs need restraint, precision, and careful attention to spacing and subtle details.
+
+---
+
+## JUCE UI Audit (JUCE 8.0.8)
+
+### When to Use
+- Reviewing a new JUCE UI component for aesthetic alignment.
+- Polishing an existing plugin interface to a "Boutique/High-End" standard.
+- Checking for UI/UX workflow efficiency and component hierarchy in a JUCE project.
+
+### Approach
+Evaluate visual identity, signal flow visualization, modern minimalism, tactility, and technical implementation (CustomLookAndFeel integrity).
+Prioritize visual excellence and authoritative guidance. Provide specific, code-ready design fixes rather than vague suggestions.
+
+### Procedure
+1. **Visual Identity Audit**: Check glassmorphism, glows (20% opacity), modern minimalism, and breathing room.
+2. **Color Palette & Typography**: Ensure harmony, deep charcoal/slate-blue bases, and MANDATORY use of `GMarketSans` font. No hardcoded colors; use `CustomLookAndFeel`.
+3. **Signal Flow & Layout**: Ensure UI layout follows audio signal path. Verify ADSR grouping and "Three-Click" rule for deep settings.
+4. **Interaction**: Verify knob response, micro-animations, and clear parameter value displays.
+5. **Technical Integrity**: Verify no allocations in `paint()`, use of vector paths, and semantic naming in LookAndFeel.
+
+### Audit Output Format
+Produce a detailed UI Audit report with:
+1. The Flaw (why it looks cheap/uncorroborated)
+2. The "Correct Way" (authoritative, specific design fix)
+3. Severity (High, Medium, Low)
+4. Reference (JUCE best practice or premium VST standard)
+
+Save the audit log to `MIDITOOLS/Summaries/`.

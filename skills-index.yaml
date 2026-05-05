@@ -38,23 +38,12 @@ skills:
       - feature-implementation-planner/EXAMPLES.md
       - feature-implementation-planner/references/workflow.md
 
-  - name: frontend-design
-    purpose: Create distinctive, production-grade frontend interfaces with high design quality.
-    category: frontend
-    depends_on: []
-    overlaps:
-      - idea-to-project
-      - ui-expert
-    related_files:
-      - frontend-design/SKILL.md
-
   - name: idea-to-project
     purpose: Turn rough ideas into project specifications and design direction.
     category: planning
     depends_on: []
     overlaps:
       - feature-implementation-planner
-      - frontend-design
       - ui-expert
     related_files:
       - idea-to-project/SKILL.md
@@ -74,7 +63,7 @@ skills:
       - impl-quality-audit/references/workflow.md
 
   - name: root-cause-debugging
-    purpose: Find verified causes of bugs, flaky behavior, and regressions.
+    purpose: Find verified causes of bugs, flaky behavior, build errors, and regressions.
     category: debugging
     depends_on: []
     overlaps:
@@ -116,11 +105,10 @@ skills:
       - test-strategy-and-generation/references/workflow.md
 
   - name: ui-expert
-    purpose: Apply algorithmic UI design principles for consistent, ergonomic, and accessible interfaces.
+    purpose: Apply algorithmic UI design principles, build production-grade frontend interfaces, and conduct JUCE UI audits.
     category: ui
     depends_on: []
     overlaps:
-      - frontend-design
       - idea-to-project
     related_files:
       - ui-expert/SKILL.md

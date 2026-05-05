@@ -51,7 +51,7 @@ After `/init`, the workspace should have:
    - verification performed,
    - follow-up considerations.
 6. If the repo depends on environment variables and no `.env` exists, create a placeholder `.env` with the required keys.
-7. Finish with a concise summary of what was initialized, what remains unknown, and what the next useful action should be. Remind the user to switch to the ralph-wiggum-loop.agent if they are not already using it.
+7. Finish with a concise summary of what was initialized, what remains unknown, and what the next useful action should be.
 
 ## Guardrails
 

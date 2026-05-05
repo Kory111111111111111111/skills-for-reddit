@@ -1,6 +1,6 @@
 ---
 name: root-cause-debugging
-description: 'Find the actual cause of bugs, failures, flaky tests, and regressions before proposing a fix. Use when: debugging runtime errors, CI failures, broken features, inconsistent behavior, or production incidents.'
+description: 'Find the actual cause of bugs, failures, flaky tests, build errors, and regressions before proposing a fix. Use when: debugging runtime errors, CI failures, broken features, inconsistent behavior, JUCE/CMake build errors, or production incidents.'
 argument-hint: 'Describe the bug, failure, or symptom and any evidence you already have'
 user-invocable: true
 disable-model-invocation: false
@@ -62,6 +62,16 @@ When debugging JUCE C++ audio plugin projects:
 3. **Thread Safety**: Ensure NO memory allocations or locks on the audio thread.
 4. **Documentation Check**: Always reference JUCE documentation via `jucedoclinks.mdc`.
 5. **Output**: Save your detailed summary to `MIDITOOLS/Summaries/`.
+
+### JUCE Build Error Protocol
+
+When the failure is a build, CMake, compilation, or linker error:
+1. **Analyze the error**: Identify the specific file, line number, and error code.
+2. **Root Cause**: Determine if it's a syntax error, API change (e.g. JUCE 8 breaking change), missing `#include`, or missing CMake linkage.
+3. **JUCE 8 API Changes**: Check if the identifier/class was renamed in JUCE 8 (e.g. `LadderFilterMode::LPF24` instead of `LP24`).
+4. **Fix and verify**: Write the correct code or CMake configuration and verify against JUCE documentation.
+
+**Example**: `C2065 'LP24': undeclared identifier` → In JUCE 8.0.8 `juce::dsp::LadderFilterMode` enumerators include an 'F' suffix → `filter.setMode(juce::dsp::LadderFilterMode::LPF24);`
 
 ## References
 

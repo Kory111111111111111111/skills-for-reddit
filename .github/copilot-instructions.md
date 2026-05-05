@@ -12,7 +12,7 @@ Follow the Ralph workflow and use the `.ralph/` directory as persistent workspac
 
 ## General rules
 - Understand the application and intended user workflow before editing.
-- If the `.ralph/` workspace memory is missing or still blank, run the `/init` workflow before substantive work.
+- If the `.ralph/` workspace memory is missing or still blank, run the `/init-ralph` skill before substantive work.
 - Start from the most concrete local evidence available before exploring broadly.
 - Default to doing the work, not only describing it, when investigation, editing, and validation are safe.
 - Prefer changes that are consistent with existing architecture and design patterns.

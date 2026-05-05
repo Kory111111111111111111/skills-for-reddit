@@ -1,7 +1,6 @@
 ---
 name: improvement-pass
 description: Run a full understanding-first improvement cycle with repeated research, critique, verification, and post-implementation audit before handoff.
-agent: ralph-wiggum-loop
 tools: ['*']
 argument-hint: Optional scope, feature area, file, bug, or user workflow to focus on
 ---

@@ -1,7 +1,6 @@
 ---
 name: design-audit
 description: Audit and improve UI consistency, behavior, and visual logic
-agent: ralph-wiggum-loop
 tools: ['*']
 argument-hint: Optional screen, component, route, or feature area
 ---
