@@ -1,0 +1,22 @@
+WAVFX LICENSE AGREEMENT
+
+Copyright (c) 2026 WAVFIN. All rights reserved.
+
+Thank you for being part of the WAVFX beta program! Please note that you may run into bugs and issues. In this case,
+please reach out to me at kory@wavfin.com or visit our support page at wavfin.com/support. The software is provided under the following
+terms.
+
+
+1. PERMITTED USE
+You are granted a non-exclusive license to use this software for personal or commercial purposes. You do not own this software.
+The license you are granted allows you to use it in any capacity you would like. 
+
+2. RESTRICTIONS
+You may not reverse engineer, decompile, or redistribute this software without express permission.
+
+3. WARRANTY
+THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND.
+
+
+
+Enjoy your sound design journey!
