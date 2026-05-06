@@ -1,0 +1,7 @@
+# Update Commands
+
+Private Repo (WAVFINSKILLS):
+git push origin main
+
+Public Repo (Reddit):
+git push public main
