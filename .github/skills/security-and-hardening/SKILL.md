@@ -55,5 +55,5 @@ See [EXAMPLES.md](EXAMPLES.md) for example security reviews, finding formats, an
 
 ## References
 
-- [RULES.md](../RULES.md) - Shared verification and dependency analysis standards
+- [../../copilot-instructions.md](../../copilot-instructions.md) - Shared verification and dependency analysis standards
 - [workflow.md](references/workflow.md) - Detailed security review flow and stack-specific guidance

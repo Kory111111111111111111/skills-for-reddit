@@ -22,7 +22,7 @@ Transform a rough concept into a complete project specification through four con
 
 This skill uses progressive questioning, adaptive branching, and natural dialogue to guide the user from vague idea to concrete project direction. Keep the main interaction collaborative and lightweight, then rely on reference docs for the detailed phase workflow.
 
-See [RULES.md](../RULES.md) for workspace-wide interaction standards and [workflow.md](references/workflow.md) for the detailed phase guidance.
+See [../../copilot-instructions.md](../../copilot-instructions.md) for workspace-wide interaction standards and [workflow.md](references/workflow.md) for the detailed phase guidance.
 
 ## Procedure
 
@@ -48,11 +48,11 @@ Both are ready for team collaboration and developer handoff.
 
 ## Conversational Tips
 
-See [RULES.md](../RULES.md) for shared conversational patterns and [workflow.md](references/workflow.md) for detailed discovery and fallback guidance.
+See [../../copilot-instructions.md](../../copilot-instructions.md) for shared conversational patterns and [workflow.md](references/workflow.md) for detailed discovery and fallback guidance.
 
 ## References
 
-- [RULES.md](../RULES.md) – Workspace rules, conversational guidelines, and decision trees for this skill
+- [../../copilot-instructions.md](../../copilot-instructions.md) - Workspace rules, conversational guidelines, and decision trees for this skill
 - [workflow.md](references/workflow.md) – Detailed phase workflow, prompts, and decision gates
 - [WCAG 2.1 Accessibility Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)
 - [Design Systems Best Practices](https://www.nngroup.com/articles/design-systems-101/)

@@ -30,15 +30,10 @@ First, investigate the workspace and build understanding by reviewing:
 - current tests and validation,
 - current UI flow and adjacent components when relevant.
 
-Then update:
-- `.ralph/project-understanding.md`
-- `.ralph/active-plan.md`
-- `.ralph/todo.md`
+Then keep the same understanding artifacts in chat by default for this repository. Do not update `.ralph/` files unless the user explicitly asks for them to be maintained.
 
 ### 2. Evidence pass
-Before implementation, gather concrete evidence for the planned approach and record it in:
-- `.ralph/project-understanding.md`
-- `.ralph/journal.md`
+Before implementation, gather concrete evidence for the planned approach and keep that evidence in chat by default for this repository. Only record it in `.ralph/` if the user explicitly asks for that.
 
 Evidence should come from some combination of:
 - existing local patterns,
@@ -110,8 +105,7 @@ Run all relevant checks available in the workspace, as applicable:
 
 Fix issues introduced by your changes.
 
-Update:
-- `.ralph/verification-report.md`
+Report verification in chat by default for this repository. Only update `.ralph/verification-report.md` if the user explicitly asks for it.
 
 ### 6. Post-implementation audit pass
 After the first verification pass, perform another audit before handoff.
@@ -131,11 +125,7 @@ If issues are found:
 Do not hand back control immediately after the first passing verification.
 
 ### 7. Documentation and handoff
-Before finishing, update:
-- `.ralph/journal.md`
-- `.ralph/design-system.md` when UI patterns were involved
-- `.ralph/verification-report.md`
-- `.ralph/handoff.md`
+Before finishing, report the equivalent handoff information in chat for this repository. Only update `.ralph/journal.md`, `.ralph/design-system.md`, `.ralph/verification-report.md`, or `.ralph/handoff.md` if the user explicitly asks for those files to be maintained.
 
 Then return control with:
 - a concise summary of what changed,

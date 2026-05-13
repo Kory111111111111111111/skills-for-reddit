@@ -53,5 +53,5 @@ See [EXAMPLES.md](EXAMPLES.md) for example test-boundary choices, case selection
 
 ## References
 
-- [RULES.md](../RULES.md) - Shared validation, edge-case, and codebase-pattern rules
+- [../../copilot-instructions.md](../../copilot-instructions.md) - Shared validation, edge-case, and codebase-pattern rules
 - [workflow.md](references/workflow.md) - Detailed test-selection flow and stack-specific guidance

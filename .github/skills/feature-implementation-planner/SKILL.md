@@ -64,5 +64,5 @@ When planning features for JUCE C++ audio plugin projects:
 
 ## References
 
-- [RULES.md](../RULES.md) - Shared context gathering, dependency analysis, and verification rules
+- [../../copilot-instructions.md](../../copilot-instructions.md) - Shared context gathering, dependency analysis, and verification rules
 - [workflow.md](references/workflow.md) - Detailed planning flow and stack-specific considerations

@@ -49,6 +49,14 @@ skills:
       - idea-to-project/SKILL.md
       - idea-to-project/references/workflow.md
 
+  - name: init-ralph
+    purpose: Opt-in-only Ralph bootstrap or refresh work when the user explicitly asks for Ralph setup.
+    category: workflow
+    depends_on: []
+    overlaps: []
+    related_files:
+      - init-ralph/SKILL.md
+
   - name: impl-quality-audit
     purpose: Audit implementation quality and robustness against production-grade references.
     category: audit

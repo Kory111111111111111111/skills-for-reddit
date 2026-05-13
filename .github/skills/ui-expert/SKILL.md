@@ -1,11 +1,24 @@
 ---
 name: ui-expert
-description: Apply algorithmic UI design principles, build production-grade frontend interfaces, and conduct JUCE UI audits. Use when generating web UI code, designing or reviewing interfaces, building distinctive frontend components, auditing JUCE plugin UIs for premium aesthetics, or ensuring design system consistency. Covers cognitive load laws, Gestalt principles, Fitts's Law, 8-point grids, typography scales, WCAG accessibility, bold frontend aesthetics, and JUCE 8 LookAndFeel best practices.
+description: 'Apply algorithmic UI design principles, build production-grade frontend interfaces, and conduct JUCE UI audits. Use when: generating web UI code, designing or reviewing interfaces, building distinctive frontend components, auditing JUCE plugin UIs for premium aesthetics, or ensuring design system consistency.'
+argument-hint: 'Describe the screen, component, design system, or JUCE UI surface to build or audit'
+user-invocable: true
+disable-model-invocation: false
 ---
 
 # UI Expert
 
 Apply algorithmic UI design principles derived from cognitive psychology and mathematical design systems to generate consistent, ergonomic, and accessible interfaces.
+
+## When to Use
+
+- Building or redesigning a web page, component, or full UI flow where visual quality and interaction design matter.
+- Auditing an interface for accessibility, hierarchy, spacing, consistency, or conversion-oriented UX.
+- Creating a distinctive design system instead of a generic default layout.
+- Reviewing or polishing a JUCE plugin UI against higher-end desktop audio standards.
+- Improving an existing UI after the core feature already works and the remaining question is design quality.
+
+If the primary problem is an unclear bug or broken behavior, use `root-cause-debugging` first. If the UI already changed and you need a risk review, use `code-change-review` first, then return to this skill for design-specific improvements.
 
 ## Core Philosophy
 

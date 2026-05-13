@@ -1,8 +1,9 @@
 ---
-name: init
-description: 'Initialize or bootstrap a Ralph workspace. Use when starting a repo, preparing the workspace for first use, creating or seeding the `.ralph` folder, filling the first project understanding / plan / todo / journal entries, and documenting setup blockers before substantive work begins.'
+name: init-ralph
+description: 'Initialize or bootstrap a Ralph workspace. Use when starting a repo, preparing the workspace for first use, creating or seeding the `.ralph` folder, filling the first project understanding / journal entries, and documenting setup blockers before substantive work begins.'
 argument-hint: Optional short note about the repo purpose or what should be prepared first
 user-invocable: true
+disable-model-invocation: true
 ---
 
 # Ralph Workspace Init
@@ -18,15 +19,13 @@ The goal is to leave the repository in a ready state for future tasks by creatin
 - A repository is new to the Ralph workflow
 - `.ralph/` exists but is still mostly blank
 - The agent needs to prepare project memory before implementation work
-- The workspace needs an initial journal entry, plan, and verification baseline
+- The workspace needs an initial journal entry and verification baseline
 
 ## Required Outcomes
 
-After `/init`, the workspace should have:
+After `/init-ralph`, the workspace should have:
 
 - a grounded initial entry in `.ralph/project-understanding.md`
-- a current bootstrap objective in `.ralph/active-plan.md`
-- a usable backlog in `.ralph/todo.md`
 - a first timestamped note in `.ralph/journal.md`
 - an initial verification baseline in `.ralph/verification-report.md`
 - a handoff entry describing what was prepared in `.ralph/handoff.md`
@@ -60,12 +59,11 @@ After `/init`, the workspace should have:
 - Keep the initial entries concise but concrete.
 - Prefer preparing the workspace for future work over speculative refactoring.
 - If the repo is itself a workflow/template repository, document that directly instead of pretending it is an app.
+- If a repository treats `.ralph/` as reference-only or opt-in, do not use this skill unless the user explicitly requests Ralph initialization or refresh work.
 
 ## Ralph File Checklist
 
 - `.ralph/project-understanding.md`
-- `.ralph/active-plan.md`
-- `.ralph/todo.md`
 - `.ralph/journal.md`
 - `.ralph/design-system.md`
 - `.ralph/verification-report.md`

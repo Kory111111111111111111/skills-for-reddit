@@ -75,5 +75,5 @@ When the failure is a build, CMake, compilation, or linker error:
 
 ## References
 
-- [RULES.md](../RULES.md) - Shared investigation and validation standards
+- [../../copilot-instructions.md](../../copilot-instructions.md) - Shared investigation and validation standards
 - [workflow.md](references/workflow.md) - Detailed investigation flow and stack-specific guidance
