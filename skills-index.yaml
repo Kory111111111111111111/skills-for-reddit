@@ -113,13 +113,16 @@ skills:
       - test-strategy-and-generation/references/workflow.md
 
   - name: ui-expert
-    purpose: Apply algorithmic UI design principles, build production-grade frontend interfaces, and conduct JUCE UI audits.
+    purpose: Apply algorithmic UI design principles, build production-grade frontend interfaces, conduct JUCE UI audits, and detect/fix AI-generated or vibe-coded UI patterns.
     category: ui
     depends_on: []
     overlaps:
       - idea-to-project
+      - agent-code-deslop
     related_files:
       - ui-expert/SKILL.md
       - ui-expert/examples.md
       - ui-expert/reference.md
       - ui-expert/resources.md
+      - ui-expert/references/anti-patterns.md
+      - ui-expert/references/audit-workflow.md

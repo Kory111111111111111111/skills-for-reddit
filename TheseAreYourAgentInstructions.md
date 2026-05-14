@@ -48,7 +48,7 @@ In this repository, treat `.ralph/` as reference material only. Do not update `.
 	- `test-strategy-and-generation` once the behavior change or bug fix is understood and the remaining question is what tests to add.
 	- `security-and-hardening` for auth, secrets, permissions, unsafe input handling, release hardening, or attack-surface review.
 	- `agent-code-deslop` for simplifying noisy AI-generated code without changing behavior.
-	- `ui-expert` for frontend design, accessibility, interaction quality, or JUCE UI polish and audits.
+	- `ui-expert` for frontend design, accessibility, interaction quality, JUCE UI polish and audits, or detecting and fixing vibe-coded/AI-generated UI patterns (generic aesthetics, AI tropes, de-slopping a UI).
 - If multiple skills seem relevant, pick the one that answers the first blocking question, then chain the next one only if it solves a distinct follow-up problem. In practice: debug before hardening, plan before implementing, implement before generating tests, and review after the code exists.
 - Do not force a skill detour for a tiny local task when the answer is already clear from nearby evidence.
 - In this repository, do not use `init-ralph` unless the user explicitly asks to initialize or refresh `.ralph/` documents.

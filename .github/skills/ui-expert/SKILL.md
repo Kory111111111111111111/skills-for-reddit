@@ -1,7 +1,7 @@
 ---
 name: ui-expert
-description: 'Apply algorithmic UI design principles, build production-grade frontend interfaces, and conduct JUCE UI audits. Use when: generating web UI code, designing or reviewing interfaces, building distinctive frontend components, auditing JUCE plugin UIs for premium aesthetics, or ensuring design system consistency.'
-argument-hint: 'Describe the screen, component, design system, or JUCE UI surface to build or audit'
+description: 'Apply algorithmic UI design principles, build production-grade frontend interfaces, conduct JUCE UI audits, and detect AI-generated UI patterns. Use when: generating web UI code, designing or reviewing interfaces, building distinctive frontend components, auditing JUCE plugin UIs for premium aesthetics, ensuring design system consistency, detecting vibe-coded or AI-generated design, fixing generic-looking websites, de-slopping a UI, removing AI tropes, identifying cookie-cutter patterns, auditing for AI aesthetics, or making a site look less AI-generated.'
+argument-hint: 'Describe the screen, component, design system, or JUCE UI surface to build, audit, or de-slop. For audit mode, describe what looks generic or AI-generated.'
 user-invocable: true
 disable-model-invocation: false
 ---
@@ -15,6 +15,7 @@ Apply algorithmic UI design principles derived from cognitive psychology and mat
 - Building or redesigning a web page, component, or full UI flow where visual quality and interaction design matter.
 - Auditing an interface for accessibility, hierarchy, spacing, consistency, or conversion-oriented UX.
 - Creating a distinctive design system instead of a generic default layout.
+- Detecting and fixing AI-generated or vibe-coded UI patterns — see **UI De-Slop: Audit & Fix Mode** below.
 - Reviewing or polishing a JUCE plugin UI against higher-end desktop audio standards.
 - Improving an existing UI after the core feature already works and the remaining question is design quality.
 
@@ -73,7 +74,7 @@ Apply modular scales based on interface requirements:
 | Low-contrast | 1.067 (Minor Second) or 1.125 | Data-dense dashboards, complex mobile interfaces |
 
 **Line Height Rules**:
-- Body copy: 1.5 ratio (e.g., 16px font = 24px line height)
+- Body copy: 1.5–1.7 ratio (1.65 is a reliable default; 16px font = 26px line height)
 - Headings: 1.1-1.35 ratio (tighter as size increases)
 
 ### WCAG 2.1 Contrast Requirements
@@ -158,12 +159,15 @@ Before finalizing UI code:
 - [ ] State persistence implemented for multi-step workflows
 - [ ] Design tokens used exclusively (no hardcoded values)
 - [ ] Follows Jakob's Law: uses familiar patterns, not novel inventions
+- [ ] No AI aesthetic defaults: Inter-only font, purple/indigo gradient, uniform `rounded-xl` on everything, or three-box icon grid without intentional deviation
 
 ## Additional Resources
 
 - For detailed cognitive principles: [reference.md](reference.md)
 - For implementation examples: [examples.md](examples.md)
 - For source links and references: [resources.md](resources.md)
+- For AI slop pattern catalog (typography, color, layout, component tropes): [references/anti-patterns.md](references/anti-patterns.md)
+- For the de-slop audit workflow and interactive clarification templates: [references/audit-workflow.md](references/audit-workflow.md)
 
 ---
 
@@ -194,6 +198,51 @@ Before coding, understand the context and commit to a clear aesthetic direction:
 ### Implementation Standard
 
 Match complexity to the aesthetic vision. Maximalist designs need elaborate code with extensive animations. Minimalist designs need restraint, precision, and careful attention to spacing and subtle details.
+
+---
+
+## UI De-Slop: Audit & Fix Mode
+
+Use this mode when a UI looks generic, AI-generated, vibe-coded, or like it came out of a Bolt/v0/Claude default. The goal is to identify the specific patterns that mark it as AI-generated and fix them — with the user's explicit direction at every design decision point.
+
+**This mode is interactive.** The agent cannot make visual judgments. Every Critical and High finding must be paused on, explained, and resolved with the user's chosen aesthetic direction before changes are applied.
+
+### When to Invoke
+- The user says the UI looks "vibe coded", "AI generated", "generic", "cookie cutter", or "like every other site"
+- The user asks to "de-slop" the UI or remove AI tropes
+- The user wants a site/app to look less like an AI built it
+- You are about to generate a new UI and want to avoid AI clichés proactively
+
+### Procedure
+
+**Step 1 — Scan**: Read all CSS, component, and layout files. Catalog every pattern against the [AI Slop Checklist in references/anti-patterns.md](references/anti-patterns.md#the-ai-slop-checklist).
+
+**Step 2 — Score**: Classify each finding as Critical, High, Medium, or Low severity. A UI with 3+ Critical findings is substantially AI-looking; report the full count.
+
+**Step 3 — PAUSE and clarify**: For every Critical or High finding, stop and ask the user which direction they want to go. Follow the [Clarification Template in references/audit-workflow.md](references/audit-workflow.md#phase-3-clarify--ask-before-fixing). Never silently fix a design decision.
+
+**Step 4 — Fix systematically**: Apply changes in this order: tokens → typography → color → layout → components. Show before/after for each change.
+
+**Step 5 — Consistency check**: Verify no old patterns crept back in. All values must reference tokens; no new hardcoded hex or arbitrary pixel values.
+
+### What Marks a UI as AI-Generated
+
+The most common signals (full catalog in [references/anti-patterns.md](references/anti-patterns.md)):
+- **Inter font as the only typeface** — the #1 AI default, zero intentionality
+- **Purple/indigo gradient** — the literal Tailwind median, seen on millions of AI-generated pages
+- **Three-column icon grid** (icon + title + description, center-aligned, uniform padding)
+- **Generic SaaS template structure**: hero → features → testimonials → CTA
+- **Uniform `rounded-xl`** on every element — no nested corner logic
+- **Copy-pasted Tailwind utility strings** with no shared tokens
+- **Pure `#000`/`#fff`** as base colors (violates Anthony Hobday's near-black/near-white rule)
+- **`fade-in-up` on every section** — no motion language, just an animation default
+- **Dark mode as `bg-gray-900 text-white`** inversion — not a dark-mode design
+
+### Design Direction Questions
+
+When asking the user for design direction, offer concrete alternatives that span different aesthetics. Don't ask "what font do you want?" — ask "should this feel editorial (serif + minimal), technical (monospace + geometric), luxury (high contrast + tight tracking), or something else? Describe the mood."
+
+See [references/audit-workflow.md](references/audit-workflow.md) for the full interactive workflow including templates and fix sequencing.
 
 ---
 
